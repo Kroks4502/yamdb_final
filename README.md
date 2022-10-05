@@ -34,7 +34,7 @@
 - Войдите на свой удаленный сервер в облаке.
 - Остановите службу nginx, если она присутствует
 - Установите docker и docker-compose
-- Скопируйте файлы docker-compose.yaml и nginx/default.conf из вашего проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
+- Скопируйте файлы docker-compose.yaml и nginx/default.conf из проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
 - Добавьте в Secrets GitHub Actions переменные окружения; отредактируйте инструкции workflow при необходимости.
 
 ```
@@ -43,6 +43,7 @@ DOCKER_PASSWORD=
 HOST=
 USER=
 SSH_KEY=
+PASSPHRASE=
 
 DJANGO_SECRET_KEY=<ваш-ключ>
 ALLOWED_HOSTS=["<ваш-домен>", "127.0.0.1", "localhost", "web"]
@@ -57,7 +58,7 @@ TELEGRAM_TO_USER=
 TELEGRAM_BOT_TOKEN=
 ```
 
-Выполните миграции в контейнере web:
+- Выполните миграции в контейнере web:
 
 ```
 docker-compose exec web python manage.py migrate
