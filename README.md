@@ -1,5 +1,6 @@
 # Проект YaMDb
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)[![Django-app workflow](https://github.com/Kroks4502/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Kroks4502/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[![Django-app workflow](https://github.com/Kroks4502/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/Kroks4502/yamdb_final/actions/workflows/yamdb_workflow.yml)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
 
 Учебный проект освоения принципов REST API. Представляет собой блог-систему
 с возможностью регистрации и публикации отзывов на произведения. Создан Docker-файл (api_yamdb/Dockerfile) и 
