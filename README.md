@@ -41,8 +41,8 @@
 DOCKER_USERNAME=
 DOCKER_PASSWORD=
 HOST=
-HOST_SSH_KEY=
-HOST_USER=
+USER=
+SSH_KEY=
 
 DJANGO_SECRET_KEY=<ваш-ключ>
 ALLOWED_HOSTS=["<ваш-домен>", "127.0.0.1", "localhost", "web"]
