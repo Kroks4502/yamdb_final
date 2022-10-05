@@ -35,23 +35,26 @@
 - Остановите службу nginx, если она присутствует
 - Установите docker и docker-compose
 - Скопируйте файлы docker-compose.yaml и nginx/default.conf из вашего проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
-- Добавьте в Secrets GitHub Actions переменные окружения для работы базы данных; отредактируйте инструкции workflow для задачи deploy.
+- Добавьте в Secrets GitHub Actions переменные окружения; отредактируйте инструкции workflow при необходимости.
 
 ```
-SECRET_KEY=<ваш-ключ>
-ALLOWED_HOSTS='["127.0.0.1", "localhost", "web"]'
+DOCKER_USERNAME=
+DOCKER_PASSWORD=
+HOST=
+HOST_SSH_KEY=
+HOST_USER=
+
+DJANGO_SECRET_KEY=<ваш-ключ>
+ALLOWED_HOSTS=["<ваш-домен>", "127.0.0.1", "localhost", "web"]
 DB_ENGINE=django.db.backends.postgresql
-DB_NAME=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+DB_NAME=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
 DB_HOST=db
 DB_PORT=5432
-```
 
-Из директории api_yamdb/ соберите контейнер, командой
-
-```
-docker-compose up -d
+TELEGRAM_TO_USER=
+TELEGRAM_BOT_TOKEN=
 ```
 
 Выполните миграции в контейнере web:
