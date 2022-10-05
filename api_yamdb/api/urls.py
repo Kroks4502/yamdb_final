@@ -5,7 +5,6 @@ from api.views import reviews
 from api.views.auth import SignUpViewSet, TokenViewSet
 from api.views.users import UserViewSet
 
-
 app_name = 'api'
 
 router_v1 = routers.DefaultRouter()

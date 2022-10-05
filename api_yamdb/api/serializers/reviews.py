@@ -1,7 +1,6 @@
-from rest_framework import serializers
 from django.shortcuts import get_object_or_404
+from rest_framework import serializers
 
-from api.validators import validate_score
 from reviews.models import Category, Comment, Genre, Review, Title
 
 
@@ -77,14 +76,21 @@ class ReviewSerializer(serializers.ModelSerializer):
         title_id = self.context.get('view').kwargs.get('title_id')
         title = get_object_or_404(Title, pk=title_id)
         reviews = title.reviews.all()
-        if validate_score(score):
-            if self.context.get('request').method == 'POST':
-                if reviews.filter(author=user).exists():
-                    raise serializers.ValidationError(
-                        'Вы можете оставлять только 1 отзыв к произведению.'
-                    )
-                return data
-            return data
+
+        if self.context.get('request').method == 'POST':
+            if not 1 <= score <= 10:
+                raise serializers.ValidationError(
+                    'Ваша оценка произведению должна быть в диапазоне 1-10.'
+                )
+            if isinstance(score, float):
+                raise serializers.ValidationError(
+                    'Ваша оценка произведению должна быть целым числом.'
+                )
+            if reviews.filter(author=user).exists():
+                raise serializers.ValidationError(
+                    'Вы можете оставлять только 1 отзыв к произведению.'
+                )
+        return data
 
     class Meta:
         model = Review

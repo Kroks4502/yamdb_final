@@ -6,7 +6,6 @@ from api.validators import (validate_forbidden_username,
                             validate_unique_case_insensitive_email,
                             validate_unique_case_insensitive_username)
 
-
 User = get_user_model()
 
 

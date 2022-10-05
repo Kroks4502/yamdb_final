@@ -3,7 +3,6 @@ from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets
 from rest_framework.response import Response
-from reviews.models import Category, Comment, Genre, Review, Title
 
 from api.filters import TitleFilter
 from api.mixins import ListPostDeleteViewSet
@@ -12,6 +11,7 @@ from api.permissions import (IsAdminOrReadOnlyPermission,
 from api.serializers.reviews import (CategorySerializer, CommentSerializer,
                                      GenreSerializer, ReviewSerializer,
                                      TitleListSerializer, TitleSerializer)
+from reviews.models import Category, Comment, Genre, Review, Title
 
 
 class CategoryViewSet(ListPostDeleteViewSet):
@@ -77,8 +77,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
-        new_queryset = Review.objects.filter(title=title_id)
-        return new_queryset
+        return Review.objects.filter(title=title_id)
 
     def perform_create(self, serializer):
         title = get_object_or_404(Title, pk=self.kwargs.get('title_id'))
@@ -114,8 +113,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         review_id = self.kwargs.get('review_id')
-        new_queryset = Comment.objects.filter(review=review_id)
-        return new_queryset
+        return Comment.objects.filter(review=review_id)
 
     def perform_create(self, serializer):
         serializer.save(
