@@ -4,6 +4,7 @@ from django.db.models import CheckConstraint, Q
 
 from reviews.validators import validate_title_year
 
+
 User = get_user_model()
 
 
