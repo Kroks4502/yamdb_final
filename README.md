@@ -31,7 +31,11 @@
 В проекте подготовлена инструкция по развёртыванию проекта в файле infra/docker-compose.yaml. 
 Для запуска проекта на вашем сервере должен быть развернут [Docker](https://www.docker.com/).
 
-Создайте файл .env в директории infra/, заполнив следующие переменные среды:
+- Войдите на свой удаленный сервер в облаке.
+- Остановите службу nginx, если она присутствует
+- Установите docker и docker-compose
+- Скопируйте файлы docker-compose.yaml и nginx/default.conf из вашего проекта на сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf соответственно.
+- Добавьте в Secrets GitHub Actions переменные окружения для работы базы данных; отредактируйте инструкции workflow для задачи deploy.
 
 ```
 SECRET_KEY=<ваш-ключ>
