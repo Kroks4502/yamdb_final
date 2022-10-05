@@ -45,8 +45,8 @@ USER=
 SSH_KEY=
 PASSPHRASE=
 
-DJANGO_SECRET_KEY=<ваш-ключ>
-ALLOWED_HOSTS=["<ваш-домен>", "127.0.0.1", "localhost", "web"]
+DJANGO_SECRET_KEY='<ваш-ключ>'
+ALLOWED_HOSTS='["<ваш-домен>", "127.0.0.1", "localhost", "web"]'
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=
 POSTGRES_USER=
