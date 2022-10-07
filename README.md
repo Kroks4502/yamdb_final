@@ -4,10 +4,8 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
 
-Учебный проект освоения принципов REST API. Представляет собой блог-систему
-с возможностью регистрации и публикации отзывов на произведения. Создан Docker-файл (api_yamdb/Dockerfile) и 
-инструкции по развёртыванию проекта в файле infra/docker-compose.yaml с автоматическим деплоем при пуше в ветку master.
-Развернутый проект можно найти по адресу: http://51.250.99.9/redoc/
+Проект приверженный принципам REST API. Представляет собой блог-систему
+с возможностью регистрации и публикации отзывов на произведения. Автоматический деплой при пуше в ветку master.
 
 
 ## Возможности API
@@ -21,12 +19,8 @@
 - Django Framework v2.2.16
 - Django REST framework v3.12.4
 - Simple JWT v4.7.2
-- python-dotenv v0.20.0
-- gunicorn v20.0.4
-- asgiref v3.2.10
-- sqlparse v0.3.1
-- Хранение базы данных на базе образа postgres:13.0-alpine
-- Сервер на базе образа Docker nginx:1.21.3-alpine
+- PostgreSQL
+- nginx
 
 ## Запуск проекта:
 
